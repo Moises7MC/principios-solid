@@ -9,6 +9,6 @@ public class Main {
         pedido.agregarItem(new ItemPedido("Mouse", 25.0, 1));
 
         GestorPedidos gestor = new GestorPedidos();
-        gestor.procesarPedido(pedido);
+        gestor.procesarPedido(pedido,new DescuentoEmpleado());
     }
 }
