@@ -17,6 +17,10 @@ public class GestorPedidos {
 
         Notificador notificador = elegirNotificador(total);
         notificador.notificar(pedido, total);
+
+        if (notificador instanceof GeneradorFactura generador) {
+            generador.generarFacturaPDF(pedido);
+        }
     }
 
     private Notificador elegirNotificador(double total) {
