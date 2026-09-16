@@ -17,6 +17,4 @@ public class GestorPedidos {
         repositorio.guardar(pedido);
         notificador.notificar(pedido, total);
     }
-
 }
-

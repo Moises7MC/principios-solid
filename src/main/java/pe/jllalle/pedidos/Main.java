@@ -10,5 +10,16 @@ public class Main {
 
         GestorPedidos gestor = new GestorPedidos();
         gestor.procesarPedido(pedido,new DescuentoEmpleado());
+
+        //NOTIFICAR AL EMPLEADOS
+        Notificador[] notificadores = {
+                new NotificadorPedidos(),
+                new NotificadorPedidosGrandes()
+        };
+
+        for (Notificador n : notificadores) {
+            n.notificar(pedido, 50.0);
+        }
+
     }
 }
