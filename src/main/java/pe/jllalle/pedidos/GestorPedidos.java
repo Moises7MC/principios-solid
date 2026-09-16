@@ -2,7 +2,11 @@ package pe.jllalle.pedidos;
 
 public class GestorPedidos {
 
-    private RepositorioPedidos repositorio = new RepositorioPedidos();
+    private final RepositorioPedidos repositorio;
+
+    public GestorPedidos(RepositorioPedidos repositorio) {
+        this.repositorio = repositorio;
+    }
 
     public void procesarPedido(Pedido pedido, EstrategiaDescuento estrategiaDescuento) {
         double subtotal = pedido.calcularTotal();
